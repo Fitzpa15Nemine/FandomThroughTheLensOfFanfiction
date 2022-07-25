@@ -2,9 +2,11 @@
 A deep dive into the popularity of various fandoms through the lens of historic data on the fanfiction created for those fandoms and posted on the popular "Fanfiction.net" website
 
 The goal:
+
 Take the viewer on a journey through the rise and fall of various fandoms using information scraped from historic records of the Fanfiction.net website
 
 Background on the subject matter:
+
 Fanfiction is a popular form of derivative work created based on any available "canon" story
 It can be developed based on any medium and while not a modern invention (historic examples of "fanfiction" include several of the works of William Shakespeare (Fan Fiction, 2022)),
 the internet has made the distribution and sharing of fanfiction far easier
