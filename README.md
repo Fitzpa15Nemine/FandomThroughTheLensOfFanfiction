@@ -14,7 +14,9 @@ many fanfiction websites cater to a specific fandom, featuring only works releva
 popular websites worldwide (FanFiction, 2022).
 
 Citations:
-Bibliography
+
 Fan Fiction. (2022, 07 24). Retrieved from Wikipedia: https://en.wikipedia.org/wiki/Fan_fiction
+
 FanFiction. (2022, 07 24). Retrieved from StatShow: https://www.statshow.com/www/fanfiction.net
+
 FanFiction.Net. (2022, 07 24). Retrieved from Wikipedia: https://en.wikipedia.org/wiki/FanFiction.Net
