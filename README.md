@@ -13,7 +13,9 @@ Founded in 1998 by Xing Li FanFiction.net was one of the first websites to allow
 
 The data:
 
-The data used in this visualization was derived from web scraping the historic archives of FanFiction.net hosted on the Wayback Machine internet archive. Data covers archived images of the categories page of the website during the years 2000-2022. Notably data crawls by Wayback Machine are much more readily available for FanFiction.net starting in 2010 and are variable as to how deep in the website they went. Data prior to 2010 is still provided to help with the visual, but may appear more reliable in the data set then it actually is. There are several years prior to 2010 that may only have 2-3 data points available from Wayback Machine.
+The data used in this visualization was derived from web scraping the historic archives of FanFiction.net hosted on the Wayback Machine internet archive. Data covers archived images of the categories page of the website during the years 2000-2022. 
+
+Notably data crawls by Wayback Machine are much more readily available for FanFiction.net starting in 2010 and are variable as to how deep in the website they went. Data prior to 2010 is provided to help with the visual narrative, but may appear more reliable in the data set then it actually is. There are several years prior to 2010 that may only have 2-3 data points available from Wayback Machine.
 
 The website has gone through several major iterations and changes during it's lifespan. Please view the archives on Wayback Machine if you wish to view more of this evolution (Wayback Machine FanFiction.net, 2022).
 
