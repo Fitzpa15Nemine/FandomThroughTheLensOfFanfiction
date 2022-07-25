@@ -7,7 +7,7 @@ Take the viewer on a journey through the rise and fall of various fandoms using 
 
 Background on the subject matter:
 
-Fanfiction is a popular form of derivative work created based on any available "canon" story. It can be developed based on any medium and while not a modern invention (historic examples of "fanfiction" include several of the works of William Shakespeare (Fan Fiction, 2022)),the internet has made the distribution and sharing of fanfiction far easier
+Fanfiction is a popular form of derivative work created based on any available canon story. It can be developed based on any medium and while not a modern invention (historic examples of fanfiction include several of the works of William Shakespeare (Fan Fiction, 2022)),the internet has made the distribution and sharing of fanfiction far easier
 
 Founded in 1998 by Xing Li FanFiction.net was one of the first websites to allow for fanfiction to be posted from any fandom (FanFiction.Net, 2022). At the time, and still to this day, many fanfiction websites cater to a specific fandom, featuring only works relevant to that fandom. According to statshow.com, Fanfiction.net ranks as one of the top 1000 popular websites worldwide (FanFiction, 2022).
 
