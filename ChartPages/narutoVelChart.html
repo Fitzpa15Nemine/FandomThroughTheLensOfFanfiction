@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,900' rel='stylesheet' type='text/css'>
+    <style>
+        h1{
+            color: rgb(0, 0, 0);
+            background-color: rgb(255, 255, 255);
+            font-family: 'Optima';
+        }
+        h5{
+            color: rgb(255, 251, 0);
+        }
+        a{
+            color: rgb(255, 136, 0);
+        }
+        :root {
+            --accent-color: #012200;
+        }
+        svg {
+            background-color: rgb(253, 253, 253);
+            font-family: 'Lato';
+        }
+        body{
+            background-color: rgb(0, 112, 6);
+        }
+        .annotation path {
+            stroke: var(--accent-color);
+            fill: none;
+        }
+        .annotation path.connector-arrow, 
+        .title text, .annotation text,
+        .annotation.callout.circle .annotation-subject path{
+            fill: rgb(0, 0, 0);
+        }
+        .annotation-note-bg {
+            fill: rgba(255, 255, 255, 0);
+        }
+        .annotation-note-title {
+            font-weight: bold;
+        }
+        .annotation.xythreshold {
+            cursor: move;
+        }
+        .hidden {
+        display: none;
+        }
+
+        text.hover {
+        font-size: .7em;
+        }
+
+        text.title {
+        font-size: 1.1em;
+        }
+        button {
+            background-color:#feffb4
+        }
+    </style>
+    <script>
+        const inputLabels = [{
+            data: { year: "2000", month: "01", fic: "0", 
+            title: "Naruto (ナルト) weekly serialization began in Weekly Shōnen Jump ", dateText: "September 21, 1999"},
+            dx: 20,
+            dy: -100
+        }, {
+            data: { year: "2002", month: "10", fic: "27.571428571428573", 
+            title: "Naruto anime premiers in Japan", dateText: "October 3, 2002"},
+            dx: 0,
+            dy: -150
+        }, {
+            data: { year: "2007", month: "02", fic: "2185.125", 
+            title: "Naruto anime part 1 concludes in Japan", dateText: "February 8, 2007"},
+            dx: -1,
+            dy: -80
+        }, {
+            data: { year: "2005", month: "09", fic: "4109", 
+            title: "Naruto anime starts airing on Cartoon Network's Toonami in the US", dateText: "September 10, 2005"},
+            dx: -10,
+            dy: -100
+        }, {
+            data: { year: "2009", month: "02", fic: "584", 
+            title: "Naruto anime part 1 concludes on Toonami in the US", dateText: "January 31, 2009"},
+            dx: -1,
+            dy: -130
+        }, {
+            data: { year: "2007", month: "03", fic: "2185", 
+            title: "Naruto: Shippuden anime premiers in Japan", dateText: "February 15, 2007"},
+            dx: -1,
+            dy: -80
+        }, {
+            data: { year: "2009", month: "01", fic: "584", 
+            title: "Viz Subtitled Episodes of Naruto: Shippuden become available", dateText: "January 1, 2009"},
+            dx: -1,
+            dy: -130
+        }, {
+            data: { year: "2009", month: "10", fic: "1828", 
+            title: "Naruto: Shippuden anime premiers on Disney XD in the US", dateText: "October 10, 2009"},
+            dx: 5,
+            dy: -120
+        }, {
+            data: { year: "2017", month: "03", fic: "1000", 
+            title: "Naruto: Shippuden anime airs the final episode", dateText: "March 23, 2017"},
+            dx: -5,
+            dy: -100
+        }, {
+            data: { year: "2014", month: "11", fic: "2000", 
+            title: "Naruto manga ends", dateText: "November 10, 2014"},
+            dx: -10,
+            dy: -80
+        }, {
+            data: { year: "2016", month: "06", fic: "1000", 
+            title: "Boruto: Naruto Next Generations begins serialization in the Weekly Shōnen Jump*", dateText: "May 6, 2016"},
+            dx: -1,
+            dy: -100
+        }, {
+            data: { year: "2022", month: "03", fic: "250", 
+            title: "Naruto anime continues to air as reruns, Boruto continues with weekly releases*", dateText: "May 1, 2022"},
+            dx: -10,
+            dy: -50
+        }]
+    </script>
+<body margin="10" onload = 'init("../Data/FFArchiveNaruto_cleaned_velocities.csv", inputLabels, "#069506" )'>
+<h1>Naruto Fic Count Changes over time</h1>
+<div class="bulkChart" id="NarutoVelChart"></div>
+<script src="../singleLineChart.js" type="text/javascript"></script>
+<h5>*"Boruto: Naruto Next Generations" has it's own FF.net Category</h5>
+<h5>+ Weekly content releases for Naruto are continuous in various mediums through the whole chart</h5>
+<button onClick="location.href='../index.html'">Explore Something Else</button>
+
+</body>
+</html>
