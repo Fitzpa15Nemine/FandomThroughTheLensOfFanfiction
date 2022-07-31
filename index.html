@@ -1,10 +1,45 @@
 <!DOCTYPE html>
 <html>
     <script src='https://d3js.org/d3.v4.min.js'></script>
+    <style>
+        h1{
+            color: rgb(2, 2, 2);
+            font-family: 'Optima';
+        }
+        h5{
+            color: rgb(255, 251, 0);
+        }
+        a{
+            color: rgb(255, 136, 0);
+        }
+        :root {
+            --accent-color: #06c200;
+        }
+        svg {
+            background-color: rgb(253, 253, 253);
+            font-family: 'Lato';
+        }
+        body{
+            background-color: rgb(228, 226, 253);
+        }
+        button {
+            background-color:#ffffff;
+            color: #000000;
+        }
+    </style>
 <body margin="10" onload = 'init("FFArchiveHarryPotter_velocities.csv")'>
-<h1>Hello Worlds</h1>
-<div id="bulkChart"></div>
-<script src="multiLineChart.js" type="text/javascript"></script>
+<h1>Fandom through the lens of Fanfiction</h1>
+<div>In 1998, Xing Li created the website FanFiction.Net. While other fanfiction hosting sites already
+    existed at the time, this was one of the first effective attempts to store fanfiction on the web for 
+    many different fandoms in the same place. Since then millions of fics have been shared.
+</div>
+<br/>
+<div>Through the power of the Wayback Machine internet archive, we can track the flow of fics posted to
+    FanFiction.Net. For fanfiction to be produced for a fandom, the fandom must have highly invested fans. 
+    Thus the measure of the flow of fanfiction being shared can give us insights into specific fandoms.
+</div>
+<br/>
+<button style="background-color: #2b2b2b; color:#e5ff00;"onClick="location.href='hpVelChart.html'">Explore Harry Potter<a></a>
 </body>
 
 </body>
