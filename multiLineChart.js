@@ -1,5 +1,5 @@
-var margin = {top: 10, right: 30, bottom: 30, left: 60},
-    width = 460 - margin.left - margin.right,
+var margin = {top: 50, right: 50, bottom: 50, left: 50},
+    width = 800 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
 
 var svg = d3.select("#bulkChart")
@@ -20,13 +20,14 @@ function init(filename){
         var x = d3.scaleLinear()
             .domain([2000,2022])
             .range([ 0, width ]);
-        svg.append("g")
-            .attr("transform", "translate(0," + height + ")")
-            .call(d3.axisBottom(x).ticks(5));
         
         var y = d3.scaleLinear()
             .domain([0, d3.max(data, function(d) { return +d.fic; })])
             .range([ height, 0 ]);
+
+        svg.append("g")
+            .attr("transform", "translate(0," + height + ")")
+            .call(d3.axisBottom(x).ticks(11));
         svg.append("g")
             .call(d3.axisLeft(y));
         
@@ -34,7 +35,7 @@ function init(filename){
         var res = nestStat.map(function(d){ return d.key })
         var color = d3.scaleOrdinal()
             .domain(res)
-            .range(['#e41a1c','#377eb8','#4daf4a','#984ea3','#ff7f00','#ffff33','#a65628','#f781bf','#999999'])
+            .range(['#7A4988','#377eb8','#4daf4a','#984ea3','#ff7f00','#ffff33','#a65628','#f781bf','#999999'])
         
         // rendering the data
         svg.selectAll(".line")
@@ -53,3 +54,4 @@ function init(filename){
         
         })
     }
+
