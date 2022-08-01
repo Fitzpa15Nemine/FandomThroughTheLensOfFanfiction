@@ -39,12 +39,16 @@ function init(filename, labelsInput){
             .domain(res)
             .range(['#7A4988','#367eb6','#4cab4b','#973ea3','#999999','#fe7f10','#fefe30','#a25625','#292929'])
         
+        path
+            .attr('stroke-dashoffset', pathLength)
+            .attr('stroke-dasharray', pathLength);
         // rendering the data
         svg.selectAll(".line")
             .data(nestStat)
             .enter()
             .append("path")
                 .attr("fill", "none")
+                .attr("transform",'translate($(margin.left},0)')
                 .attr("stroke", function(d){ return color(d.key) })
                 .attr("stroke-width", 1.5)
                 .attr("d", function(d){
@@ -52,7 +56,9 @@ function init(filename, labelsInput){
                     .x(function(d) { return _x(d.year - -1 * d.month/12); })
                     .y(function(d) { return _y(+d.fic); })
                     (d.values)
-                })
+                });
+
+        const pathLength = path.node().getTotalLength();
         
         var labels = labelsInput.map(function (l) {
             l.note = Object.assign({}, l.note, { title: l.data.title,
@@ -75,9 +81,19 @@ function init(filename, labelsInput){
                 annotation.type.a.selectAll("g.annotation-connector, g.annotation-note").classed("hidden", true);
             });
 
-        svg.append("g").attr("class", "annotation-test").call(makeAnnotations);
+        svg.append("g").attr("class", "annotation-fun").call(makeAnnotations);
 
-        svg.selectAll("g.annotation-connector, g.annotation-note").classed("hidden", true);
+        // svg.selectAll("g.annotation-connector, g.annotation-note").classed("hidden", true);
+
+        const transitionPath = d3
+        .transition()
+        .duration(2500);
+
+        path
+        .attr('stroke-dashoffset', pathLength)
+        .attr('stroke-dasharray', pathLength)
+        .transition(transitionPath)
+        .attr('stroke-dashoffset', 0);
     
     })
 }
