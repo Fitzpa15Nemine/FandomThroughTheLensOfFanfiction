@@ -12,7 +12,21 @@ var svg = d3.select("#bulkChart")
     .attr("transform",
             "translate(" + margin.left + "," + margin.top + ")");
 
-function init(filename, labelsInput){
+function showAnnotations(){
+    d3.selectAll("g.annotation-connector, g.annotation-note")
+        .transition()
+        .duration(3000)
+        .delay(function(d, i) { return i * 900; })
+        .style("opacity", 100);
+
+    d3.selectAll("g.annotation-connector, g.annotation-note")
+        .transition()
+        .duration(3000)
+        .delay(function(d, i) { return i * 900 + 400; })
+        .style("opacity", 0);
+}
+
+function init(filename, labelsInput, yaxisLabel){
     d3.csv(filename, function(data) {
         var nestStat = d3.nest() 
             .key(function(d) { return d.fandom;})
@@ -32,6 +46,21 @@ function init(filename, labelsInput){
             .call(d3.axisBottom(_x).ticks(11));
         svg.append("g")
             .call(d3.axisLeft(_y));
+
+        //label some axis
+        svg.append("text")      
+        .attr("x", width/2 )
+        .attr("y",  _y(0) + margin.bottom - 10)
+        .style("text-anchor", "middle")
+        .text("Year");
+
+        svg.append("text")
+        .attr("transform", "rotate(-90)")      
+        .attr("x", 0 - height/2)
+        .attr("y", 0 - margin.left)
+        .attr("dy", "1em")
+        .style("text-anchor", "middle")
+        .text(yaxisLabel);
         
         // adding lots of colors
         var res = nestStat.map(function(d){ return d.key })
@@ -39,16 +68,16 @@ function init(filename, labelsInput){
             .domain(res)
             .range(['#7A4988','#367eb6','#4cab4b','#973ea3','#999999','#fe7f10','#fefe30','#a25625','#292929'])
         
-        path
-            .attr('stroke-dashoffset', pathLength)
-            .attr('stroke-dasharray', pathLength);
+        // path
+        //     .attr('stroke-dashoffset', pathLength)
+        //     .attr('stroke-dasharray', pathLength);
         // rendering the data
         svg.selectAll(".line")
             .data(nestStat)
             .enter()
             .append("path")
                 .attr("fill", "none")
-                .attr("transform",'translate($(margin.left},0)')
+                //.attr("transform",'translate($(margin.left},0)')
                 .attr("stroke", function(d){ return color(d.key) })
                 .attr("stroke-width", 1.5)
                 .attr("d", function(d){
@@ -58,7 +87,7 @@ function init(filename, labelsInput){
                     (d.values)
                 });
 
-        const pathLength = path.node().getTotalLength();
+        // const pathLength = path.node().getTotalLength();
         
         var labels = labelsInput.map(function (l) {
             l.note = Object.assign({}, l.note, { title: l.data.title,
@@ -83,17 +112,17 @@ function init(filename, labelsInput){
 
         svg.append("g").attr("class", "annotation-fun").call(makeAnnotations);
 
-        // svg.selectAll("g.annotation-connector, g.annotation-note").classed("hidden", true);
+        svg.selectAll("g.annotation-connector, g.annotation-note").classed("hidden", true);
 
-        const transitionPath = d3
-        .transition()
-        .duration(2500);
+        // const transitionPath = d3
+        // .transition()
+        // .duration(2500);
 
-        path
-        .attr('stroke-dashoffset', pathLength)
-        .attr('stroke-dasharray', pathLength)
-        .transition(transitionPath)
-        .attr('stroke-dashoffset', 0);
+        // path
+        // .attr('stroke-dashoffset', pathLength)
+        // .attr('stroke-dasharray', pathLength)
+        // .transition(transitionPath)
+        // .attr('stroke-dashoffset', 0);
     
     })
 }
