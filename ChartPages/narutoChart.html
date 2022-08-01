@@ -66,80 +66,77 @@
             dx: 20,
             dy: -100
         }, {
-            data: { year: "2002", month: "10", fic: "27.571428571428573", 
+            data: { year: "2002", month: "10", fic: "52", 
             title: "Naruto anime premiers in Japan", dateText: "October 3, 2002"},
-            dx: 0,
-            dy: -150
+            dx: 20,
+            dy: -100
         }, {
-            data: { year: "2005", month: "09", fic: "4109", 
+            data: { year: "2005", month: "09", fic: "15645", 
             title: "Naruto anime starts airing on Cartoon Network's Toonami in the US", dateText: "September 10, 2005"},
             dx: -10,
             dy: -50
         }, {
-            data: { year: "2007", month: "02", fic: "2185.125", 
+            data: { year: "2007", month: "02", fic: "84824", 
             title: "Naruto anime part 1 concludes in Japan", dateText: "February 8, 2007"},
-            dx: -1,
-            dy: -80
-        }, {
-            data: { year: "2007", month: "03", fic: "2185", 
-            title: "Naruto: Shippuden anime premiers in Japan", dateText: "February 15, 2007"},
-            dx: -1,
-            dy: -80
-        }, {
-            data: { year: "2009", month: "01", fic: "584", 
-            title: "Viz Subtitled Episodes of Naruto: Shippuden become available", dateText: "January 1, 2009"},
-            dx: -1,
-            dy: -130
-        }, {
-            data: { year: "2009", month: "02", fic: "584", 
-            title: "Naruto anime part 1 concludes on Toonami in the US", dateText: "January 31, 2009"},
-            dx: -1,
-            dy: -130
-        }, {
-            data: { year: "2009", month: "10", fic: "1828", 
-            title: "Naruto: Shippuden anime premiers on Disney XD in the US", dateText: "October 10, 2009"},
-            dx: 5,
-            dy: -120
-        }, {
-            data: { year: "2014", month: "11", fic: "2000", 
-            title: "Naruto manga ends", dateText: "November 10, 2014"},
-            dx: -10,
-            dy: -80
-        }, {
-            data: { year: "2016", month: "06", fic: "1000", 
-            title: "Boruto: Naruto Next Generations begins serialization in the Weekly Shōnen Jump*", dateText: "May 6, 2016"},
-            dx: -1,
-            dy: -100
-        }, {
-            data: { year: "2017", month: "03", fic: "1000", 
-            title: "Naruto: Shippuden anime airs the final episode", dateText: "March 23, 2017"},
-            dx: -5,
-            dy: -100
-        }, {
-            data: { year: "2022", month: "03", fic: "250", 
-            title: "Naruto anime continues to air as reruns, Boruto continues with weekly releases*", dateText: "May 1, 2022"},
             dx: -10,
             dy: -50
+        }, {
+            data: { year: "2007", month: "03", fic: "84824", 
+            title: "Naruto: Shippuden anime premiers in Japan", dateText: "February 15, 2007"},
+            dx: -10,
+            dy: -50
+        }, {
+            data: { year: "2009", month: "01", fic: "182199", 
+            title: "Viz Subtitled Episodes of Naruto: Shippuden become available", dateText: "January 1, 2009"},
+            dx: -10,
+            dy: -50
+        }, {
+            data: { year: "2009", month: "02", fic: "182199", 
+            title: "Naruto anime part 1 concludes on Toonami in the US", dateText: "January 31, 2009"},
+            dx: -10,
+            dy: -50
+        }, {
+            data: { year: "2009", month: "10", fic: "212682", 
+            title: "Naruto: Shippuden anime premiers on Disney XD in the US", dateText: "October 10, 2009"},
+            dx: -10,
+            dy: -30
+        }, {
+            data: { year: "2014", month: "11", fic: "370000", 
+            title: "Naruto manga ends", dateText: "November 10, 2014"},
+            dx: 10,
+            dy: 70
+        }, {
+            data: { year: "2016", month: "06", fic: "402000", 
+            title: "Boruto: Naruto Next Generations begins serialization in the Weekly Shōnen Jump*", dateText: "May 6, 2016"},
+            dx: 10,
+            dy: 50
+        }, {
+            data: { year: "2017", month: "03", fic: "411000", 
+            title: "Naruto: Shippuden anime airs the final episode", dateText: "March 23, 2017"},
+            dx: 10,
+            dy: 50
+        }, {
+            data: { year: "2022", month: "03", fic: "437000", 
+            title: "Naruto anime continues to air as reruns, Boruto continues with weekly releases*", dateText: "May 1, 2022"},
+            dx: -10,
+            dy: 50
         }]
     </script>
-<body margin="10" onload = 'init("../Data/FFArchiveNaruto_cleaned_velocities.csv", inputLabels, "#069506", "Fics Added per Month")'>
-<h1>Naruto Fic Count Changes over time</h1>
+<body margin="10" onload = 'init("../Data/FFArchiveNaruto_cleaned.csv", inputLabels, "#069506", "Fic Count")'>
+<h1>Naruto Fic Counts</h1>
 <div class="bulkChart" id="NarutoVelChart"></div>
 <script src="../singleLineChart.js" type="text/javascript"></script>
 <button onClick = 'showAnnotations()'>Show the Big Events</button>
 <br/>
-<h3>The Continuous Release Fandom</h3>
-<p>Naruto is a good example of a fandom with constant content releases.
-    There is not time on this chart were some kind of new content isn't coming out 
-    in some medium, mainly anime or manga.</p>
-<p>As such, while the events here do still chart
-    some activity in the fandom, such as the start of various content cycles, the velocity 
-    does not vary as much as a fandom where content is released in large individual chunks.
+<h3>Another a View Continuous Release Fandom</h3>
+<p>We conclude with another view of the Naruto fandom. Notably, the 
+    course looks very similar to the fic count data for Harry Potter, but has 
+    a noticeably smoother arch. Most of the spikes align with the expected
+    spots in 2007-2009 where the archive data is less frequent.
 </p>
-<p>Perhaps charting notable plot developments would be informative than content release events?</p>
 <p>Click "Explore Something Else" to check out other fandoms.</p>
 <h5>*"Boruto: Naruto Next Generations" has it's own FF.net Category</h5>
-<button onClick="location.href='../ChartPages/narutoChart.html'">Next</button>
+<button onClick="location.href='../ChartPages/narutoVelChart.html'">Naruto Velocity (Back)</button>
 <br/>
 <br/>
 <button onClick="location.href='../indexFandomHub.html'">Explore Something Else</button>
